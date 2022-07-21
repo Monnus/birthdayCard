@@ -1,5 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View ,SafeAreaView,Alert} from 'react-native';
+
+import { StyleSheet, Text, View ,SafeAreaView,Alert,ImageBackground,Image} from 'react-native';
+import bgImage from "./Images/balloon-drawing-16.jpg";
 import { Avatar, Button, Card, Title} from 'react-native-paper';
 
 import "./"
@@ -9,21 +10,23 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-   <Card style={{left:"10%",width:"70%",height:"70%" ,backgroundColor:"#ffedcc"}} mode="outlined">
-    <Card.Title title="Happy Birthday" subtitle="Happy 23 birthday Monnus"/>
+      <ImageBackground source={bgImage}  style={styles.image}>
+
+   <Card style={{left:"15%",width:"70%",height:"80%" ,backgroundColor:"rgba(0, 153, 0,0.9)"}} >
+    <Card.Title color="coral" title="Happy Birthday" subtitle="Happy 23 birthday Monnus"/>
   
-    <iframe src="https://giphy.com/embed/Qvns6NmhC1MBLKGbL1" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/bill-murray-happy-birthday-to-you-Qvns6NmhC1MBLKGbL1" style={{textDecoration:"none"}}>via GIPHY</a></p>
-    <Card.Content>
+    <iframe src="https://giphy.com/embed/8FBCOSYErFjmDoaxeG" width="auto" height="auto" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/happy-birthday-pig-hbd-8FBCOSYErFjmDoaxeG" style={{textDecoration:"none",color:"orange"}}>via GIPHY</a></p>    <Card.Content>
       <Title> Happy Birthday</Title>
-      <Text>You are an amazing person and I'm incredibly lucky to call you my friend! May this yaer bring you all the 
+      <Text style={{textAlign:"center", color:"white"}}>You are an amazing person and I'm incredibly lucky to call you my friend! May this year bring you all the 
         happiness you want and deserve.
       </Text>
-      <Text style={{textAlign:"center"}}>Welcome to your Early twenties </Text>
+      <Text style={{textAlign:"center", color:"coral"}}>Welcome to your Early twenties </Text>
     </Card.Content>
     <Card.Actions>
-
+<Image/>
     </Card.Actions>
    </Card>
+      </ImageBackground>
       </SafeAreaView>
   );
 }
@@ -31,8 +34,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container :{
     flex:1,
-    backgroundColor:"#ffd280",
+ maxWidth:600,
+    backgroundColor:"black",
       alignContent:'center',
       margin:37
+  },
+  image:{
+   flexGrow:3,
+    justifyContent:"center"
   }
 })
